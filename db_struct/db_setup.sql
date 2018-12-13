@@ -1,4 +1,7 @@
--- we don't know how to generate schema logistics_demo (class Schema) :(
+create database logistics_demo;
+
+use logistics_demo;
+
 create table if not exists courier_list
 (
 	id int auto_increment,
