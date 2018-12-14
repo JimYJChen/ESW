@@ -10,8 +10,8 @@ CREATE TABLE `courier_list` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `courier_name` varchar(10) NOT NULL,
   `courier_other_info` varchar(2) DEFAULT NULL,
-  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `courier_list_id_uindex` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='list of couier';
@@ -26,7 +26,7 @@ CREATE TABLE `courier_role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `courier_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
-  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `courier_role_id_uindex` (`id`)
@@ -63,7 +63,7 @@ CREATE TABLE `goods_name` (
   `receiver_id` int(11) NOT NULL COMMENT 'id of the receiver',
   `receiver_name` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'the name of receiver',
   `receiver_path` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'the path of receiver',
-  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `goods_name_id_uindex` (`id`)
@@ -96,7 +96,7 @@ CREATE TABLE `working_flow` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `working_flow` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'waiting confirm' COMMENT 'the goods delievery flow',
   `duty_sender` int(11) DEFAULT NULL COMMENT 'the courier''s id',
-  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `working_flow_id_uindex` (`id`),
